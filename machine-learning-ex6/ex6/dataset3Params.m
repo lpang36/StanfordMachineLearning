@@ -31,7 +31,7 @@ for i = 1:length(C_list)
 		f = @(x1,x2)gaussianKernel(x1,x2,sigma_list(i));
 		model = svmTrain(X,y,C_list(i),f);
 		pred = svmPredict(model,Xval);
-		error = mean(double(pred!=yval));
+		error = mean(double(pred~=yval));
 		if (error<current_best)
 			C = C_list(i);
 			sigma = sigma_list(i);
