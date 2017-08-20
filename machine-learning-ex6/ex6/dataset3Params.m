@@ -34,7 +34,7 @@ for i = 1:length(C_list)
 		error = mean(double(pred~=yval));
 		if (error<current_best)
 			C = C_list(i);
-			sigma = sigma_list(i);
+			sigma = sigma_list(j);
 		end
 	end
 end
